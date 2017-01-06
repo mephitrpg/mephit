@@ -1,0 +1,26 @@
+<personaggio>
+	<nome>Pucci Pucci</nome>
+	<sesso>M</sesso>
+	<allineamento>LN</allineamento>
+	<divinita>LN</divinita>
+	<eta>19</eta>
+	<razza name="Halfling"/>
+	<livelli>
+		<livello num="1">
+			<classe name="Ranger"/>
+			<abilita>
+				<ability id="hide"/>
+				<ability id="moveSilently"/>
+			</abilita>
+			<caratteristiche>
+				<caratteristica name="FOR">1</caratteristica>
+			</caratteristiche>
+			<talenti>
+				<talento name=""></talento>
+			</talenti>
+		</livello>
+	</livelli>
+	<taglia>
+		<modifier>1</modifier>
+	</taglia>
+</personaggio>

@@ -1,0 +1,64 @@
+<?php
+if(isset($_POST["act_login"])){
+	switch($_POST["act_login"]){
+		case"logout":
+			require_once(dirname(__FILE__)."/logout.php");
+		break;
+		case"login":
+ 			$query_login="SELECT * FROM mephit_giocatore WHERE nick='".$_POST[us]."'";
+			$result_login=mysql_query($query_login);
+			if($result_login){
+				$_SESSION["logged"]=false;
+				if(mysql_num_rows($result_login)>0){
+					while($row=mysql_fetch_array($result_login)){
+						if($row[active]){
+							if(sha1($_POST[pw])==$row[password]){
+								$_SESSION["logged"]=true;
+								$_SESSION["user"]=stripslashes($_POST[us]);
+								$_SESSION["user_id"]=$row[id_giocatore];
+								$_SESSION["user_nick"]=$row[nick];
+								$_SESSION["user_type"]=$row[type];
+								$_SESSION["email"]=$row[eMail];
+								$_SESSION["user_folder_http"]=$_MEPHIT[HTDOCS_TEST]."/public/users/".$row[id_giocatore];
+								$_SESSION["user_folder_server"]=$_SERVER["DOCUMENT_ROOT"].$_SESSION["user_folder_http"];
+								$_SESSION["avatar_size"]=$row[avatar_size];
+								$_SESSION["avatar_type"]=$row[avatar_type];
+								$_SESSION["avatar_link"]=$row[avatar_link];
+								$_SESSION["avatar_link_x"]=$row[avatar_link_x];
+								$_SESSION["avatar_link_y"]=$row[avatar_link_y];
+								switch($_SESSION["avatar_type"]){
+									case 0:
+										$_SESSION["avatar"]=$_MEPHIT[avatar_default];
+									break;
+									case 1:
+										$_SESSION["avatar"]="images/avatar.gif";
+										$handle=opendir($_SESSION["user_folder_server"].$_MEPHIT["user"]["folders"]["avatar"]);
+										while($file = readdir($handle)){if(!is_dir($file)){
+											$_SESSION["avatar"]=$_SESSION["user_folder_http"].$_MEPHIT["user"]["folders"]["avatar"]."/".$file;
+											break;
+										}}
+									break;
+									case 2:
+										$_SESSION["avatar"]=$row[avatar_link];
+									break;
+								}
+								$_SESSION["avatar_link_x"]=$row[avatar_link_x];
+								$_SESSION["avatar_link_y"]=$row[avatar_link_y];
+							}else{
+								$LOGIN_ERROR=strtoupper($_LANG["pass_not_found"]);
+							}
+						}else{
+							$LOGIN_ERROR=strtoupper($_LANG["user_not_active"]);
+						}
+					}
+				}else{
+					$LOGIN_ERROR=strtoupper($_LANG["user_not_found"]);
+				}
+			}else{
+				$LOGIN_ERROR=$_LANG["db_error_short"];
+			}
+		break;
+	}
+}
+require_once(dirname(__FILE__)."/permessi.php");
+?>

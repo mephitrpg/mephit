@@ -1,0 +1,57 @@
+#mainmenu{
+	background:#000;
+	background-color:rgba(0,0,0,0.5);
+}
+
+.lt-ie9 #mainmenu{
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)"; /* IE8 */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);   /* IE6 & 7 */
+	zoom: 1;
+}
+
+#contentShadow{
+	background:#000;
+	background-color:rgba(0,0,0,0.5);
+	border-bottom-color:rgba(136,136,136,0.5);
+}
+
+.lt-ie9 #contentShadow{
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)"; /* IE8 */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);   /* IE6 & 7 */
+	zoom: 1;
+	border-bottom-color:#57585a;
+}
+
+#contentContainer{
+	background:#fff;
+	border-color:#e3e3e3;
+}
+
+#contentGradientTop1{
+	background: #c54b5a;
+	background: -moz-linear-gradient(top, #c54b5a 0%, #2c152f 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c54b5a), color-stop(100%,#2c152f));
+	background: -webkit-linear-gradient(top, #c54b5a 0%,#2c152f 100%);
+	background: -o-linear-gradient(top, #c54b5a 0%,#2c152f 100%);
+	background: -ms-linear-gradient(top, #c54b5a 0%,#2c152f 100%);
+	background: linear-gradient(to bottom, #c54b5a 0%,#2c152f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c54b5a', endColorstr='#2c152f',GradientType=0 );
+}
+
+#contentGradientTop2{
+	background: #ecb3b9;
+	background: -moz-linear-gradient(top, #ecb3b9 0%, #fdfbfc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ecb3b9), color-stop(100%,#fdfbfc));
+	background: -webkit-linear-gradient(top, #ecb3b9 0%,#fdfbfc 100%);
+	background: -o-linear-gradient(top, #ecb3b9 0%,#fdfbfc 100%);
+	background: -ms-linear-gradient(top, #ecb3b9 0%,#fdfbfc 100%);
+	background: linear-gradient(to bottom, #ecb3b9 0%,#fdfbfc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecb3b9', endColorstr='#fdfbfc',GradientType=0 );
+
+	border-top-color:#f3d5d5;
+	border-left-color:#e3e3e3;
+	border-right-color:#e3e3e3;
+}
+

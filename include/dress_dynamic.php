@@ -1,0 +1,11 @@
+<?php
+require_once(dirname(__FILE__)."/login/".(($_SESSION["logged"])?"profile":"login")."_form.php");
+$smarty->assign('path',$PATH);
+$smarty->assign('login',$LOGIN);
+$smarty->assign('body',$BODY);
+$smarty->assign('alerts',$ALERTS);
+$smarty->assign('tab1',$TAB1);
+require_once($_MEPHIT[DOCUMENT_ROOT]."/include/js.php");
+$smarty->assign('js',$JS);
+$smarty->display('index.tpl');
+?>

@@ -1,0 +1,78 @@
+#equiptabs{border:1px solid #c00000;}
+.tabmenu UL{
+	margin:0;padding:0;list-style:none;background:#c00000;color:#fff;
+	border-bottom:1px solid #fff;
+}
+.tabmenu LI{float:left;}
+.tabmenu A{display:block;line-height:2em;padding:0 1em;text-decoration:none;color:#fff;}
+.tabmenu .sel A{background:#fff;color:#c00000;}
+.cnt {
+	
+}
+.tabellabella TH .hoverContainer A{color:#000;}
+.possessionName{cursor:move;}
+.itemsContainer{padding:1em;}
+
+.orderBy{color:#fff;text-decoration:none;}
+
+.tabellabella{border:1px solid #C00000;}
+.tabellabella TH{background:#C00000;color:#fff;text-align:left;font-weight:normal;}
+.tabellabella TH A{color:#fff;text-decoration:none;}
+.tabellabella .sel{background:#fff;}
+.tabellabella .sel A{color:#C00000;}
+
+.dispari{background:#F2E4BC;}
+
+#contenitori_nome TD{white-space:nowrap;}
+
+.contenitore{width:100%;}
+.contenitore TH,.contenitore TD{white-space:nowrap;padding:2px 6px;}
+.contenitore THEAD TH{color:#fff;background:#C00000;border-bottom:1px solid #fff;}
+.contenitore TFOOT TD{color:#fff;background:#C00000;border-top:1px solid #fff;}
+.contenitore .pulsanti{background:#C00000;padding:0;}
+.contenitore .pulsantiera{width:32px;}
+.contenitore .plus{display:block;float:left;color:#fff;text-decoration:none;padding:0 4px;font-size:1.2em;}
+.contenitore .minus{display:block;float:left;color:#fff;text-decoration:none;padding:0 4px;font-size:1.2em;}
+.contenitore .note{border:1px solid #CCC;border-width:0 0 1px 0;background:transparent;color:#999;width:100%;}
+.contenitore .overCapacity{background:#f80;}
+
+/* -------------------------------- */
+
+#optTabs{
+	list-style:none;margin:0;padding:0;
+	font-weight:normal;background:#666;
+	border:1px solid #666;border-width:1px 1px 0 1px;
+}
+#optTabs .tab{display:inline;}
+#optTabs A{display:block;float:left;color:#fff;text-decoration:none;padding:0 1em;line-height:2em;}
+#optTabs .sel A{color:#666;background:#ccc;}
+#optCnt{
+	background:#ccc;
+	border:1px solid #666;border-width:0 1px 1px 1px;
+	padding:1em;
+}
+
+#load_bar_background{background:#000;overflow:hidden;line-height:20px;height:40px;}
+#load_bar{height:40px;}
+#load_bar_text{font-size:14px;font-weight:bold;margin-top:-40px;color:#fff;text-align:center;height:20px;text-shadow: 0px 1px 1px #666;}
+#load_bar_text_small{font-size:11px;font-weight:normal;}
+.leggero	{background:#080;}
+.medio		{background:#f80;}
+.pesante	{background:#ff0000;}
+.sollevare	{background:#999;}
+.trascinare	{background:#666;}
+.stop		{background:#000;}
+
+.money{color:#fff;text-align:center;line-height:20px;height:40px;text-shadow: 0px 1px 1px #666;}
+.moneyQ{font-size:14px;font-weight:bold;}
+.moneyT{font-size:11px;text-transform:lowercase;}
+
+.values{color:#666;text-align:center;line-height:20px;height:40px;text-shadow: 0px 1px 1px #666;}
+.valuesQ{font-size:14px;font-weight:bold;}
+.valuesT{font-size:11px;text-transform:lowercase;}
+
+/* -------------------------------- */
+
+#addBagForm_divPadding{padding:4px;}
+#addBagForm_div TH,#addBagForm_div TD,#addBagForm_div INPUT{font-size:7pt;}
+#addBagForm_div TH{text-align:right;}

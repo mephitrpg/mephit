@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+</head>
+
+<body>
+<form name=f>
+<textarea name=ta cols=40 rows=20></textarea>
+
+</form>
+<script>
+x=new Array(
+	"appraise",
+	"balance",
+	"bluff",
+	"climb",
+	"concentration",
+	"craft",
+	"deciphter_script",
+	"diplomacy",
+	"disable_device",
+	"disguise",
+	"escape_artist",
+	"forgery",
+	"gather_information",
+	"handle_animal",
+	"heal",
+	"hide",
+	"intimidate",
+	"jump",
+	"knowledge",
+	"listen",
+	"move_silently",
+	"open_lock",
+	"perform",
+	"profession",
+	"ride",
+	"search",
+	"sense_motive",
+	"sleight_of_hand",
+	"spellcraft",
+	"spot",
+	"survival",
+	"swim",
+	"tumble",
+	"use_magic_device",
+	"use_rope"
+);
+result=""
+
+c1=new Array();
+c1[0]="craft"
+c1[1]="knowledge"
+c1[2]="perform"
+c1[3]="profession"
+
+c2=new Array();
+c2[0]=3
+c2[1]=5
+c2[2]=3
+c2[3]=2
+
+for(i=0;i<x.length;i++){
+	found=false;
+	for(j=0;j<c1.length;j++){
+		if(x[i]==c1[j])found=j;
+	}
+	if( found!==false ){
+		quanteCopie=c2[found];
+	}else{
+		quanteCopie=1;
+	}
+	for(j=0;j<quanteCopie;j++){
+		if( found!==false ){
+			counter="_"+(j+1);
+			field_free=x[i]+"_free"
+		}else{
+			counter="";
+			field_free="";
+		}
+		result+="	\""+x[i]+"_cross"+counter+"\",\n"
+		result+="	\""+x[i]+"_misc"+counter+"\",\n"
+		result+="	\""+x[i]+"_ranks"+counter+"\",\n"
+		if(found!==false)result+="	\""+x[i]+"_free"+counter+"\",\n"
+	}
+}
+document.f.ta.value=result
+</script>
+
+</body>
+</html>

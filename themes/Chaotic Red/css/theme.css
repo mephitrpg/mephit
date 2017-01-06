@@ -1,0 +1,142 @@
+HTML,BODY{height:100%;}
+BODY{overflow:-moz-scrollbars-horizontal -moz-scrollbars-vertical;}
+IMG{border:0px;}
+FORM{display:inline;}
+
+.bg-dark{background-color:#970000;}
+.bg-light{background-color:#C00000;}
+.bg-sx{background:url(../images/menusx_bg.gif) left repeat-y #C00000;}
+
+BODY{background-color:#ffffff;margin:0px;padding:0px;}
+A,BODY,TD,TH,H3,INPUT,SELECT,TEXTAREA,.select_title{font-family: Trebuchet MS, Arial, Helvetica, Sans-serif;}
+A,BODY,TD,TH{font-size:10pt;}
+A,BODY,TD{color:#000;}
+TH{color:#0080c0;}
+A{color:#880000;}
+
+ .header       {font:bold 10pt verdana;color:#ffffff;text-decoration:none;padding:10px;border:solid 3px #970000;}
+A.header:hover {border-bottom-color:#ff8800;}
+ .menutop      {color:#ffffff;text-decoration:none;}
+A.menutop:hover{background-color:#ee0000;}
+ .menutop_sel  {color:#c00000;background-color:#ffffff;text-decoration:none;}
+
+#menusx A,#menusx DIV{position:absolute;}
+#menusx A,#menusx DIV,#menusx SPAN{display:block;width:200px;color:#ffffff;font-size:14pt;line-height:30pt;text-decoration:none;}
+#menusx A:hover{background-color:#ffffff;FILTER: Alpha(Opacity=20, FinishOpacity=0, Style=0);-moz-opacity:.20;opacity:0.2;}
+#menusx IMG{margin:0px 10px 0px 4px;}
+
+#roller{margin:0px 10px;padding:6px 10px 10px 10px;background-color:#CD3333;cursor:help;-moz-border-radius: 4px;}
+#rollerControls{border:1px solid #800000;height:20px;}
+#rollerControls .exp{float:left;border-style:none;width:138px;height:20px;background-color:#ffffff;FILTER: Alpha(Opacity=20, FinishOpacity=0, Style=0);-moz-opacity:.20;cursor:help;}
+#rollerControls .exp:hover{FILTER: Alpha(Opacity=30, FinishOpacity=0, Style=0);-moz-opacity:.30;}
+#rollerControls .btn{float:right;border:0;width:20px;height:20px;background-color:#ffffff;FILTER: Alpha(Opacity=40, FinishOpacity=0, Style=0);-moz-opacity:.40;}
+
+#path{font:bold 7pt tahoma;}
+#path A{font:bold 7pt tahoma;}
+
+.menutopLayer{position:absolute;visibility:hidden;border:solid 1px #ff0000;border-top-style:none;background-color:#ffffff;}
+H3{font-size:14pt;color:#000000;font-weight:normal;margin-top:0px;}
+H1{font-size:33;color:#cccccc;font-weight:normal;margin-top:0px;}
+.select_title{background-color:#C00000;color:#ffffff;font-weight:bold;font-size:12pt;}
+
+#coldx{border-left:2px dashed #dddddd;}
+#coldx H3{color:#c0c0c0;}
+
+#loginForm {font-size:7pt;font-weight:bold;}
+#loginForm INPUT {font-size:7pt;font-weight:normal;border:1px solid #666;}
+#loginForm A{font-size:7pt;font-weight:bold;}
+
+#monthCalendar {font-size:10pt;}
+#monthCalendar A {text-decoration:none;}
+#monthCalendar TD {background-color:#ffffff;font-size:8pt;line-height:7pt;}
+#monthCalendar TH {background-color:#ff8400;color:#ffffff;}
+#monthCalendar TH.month {background-color:#C00000;color:#ffffff;border-bottom:4px solid #970000;}
+#monthCalendar TD.empty {background-color:#ff8400;}
+#monthCalendar #sel {border:1px solid #970000;background-color:#ffdddd;}
+#monthCalendar #sel A {color:#000000;}
+#monthCalendar #linksel {border:1px solid #009700;background-color:#ddffdd;}
+#monthCalendar #linksel A {color:#000000;}
+#monthCalendar #link {border:1px solid #000097;background-color:#ddffdd;}
+#monthCalendar #link A {color:#000000;}
+
+#CALMENU TD{COLOR:#FFFFFF;font-size: 9pt;}
+#CALMENU A{COLOR:#FFFFFF;font-size: 9pt;}
+
+/* DnDTools */
+
+#tableCAR, #tableCAR TD {border:1px solid #ccc;border-width:1px 0px 0px 1px;}
+#tableCAR TD {border-width:0px 1px 1px 0px;}
+#tableCAR TH {color:#0080c0;background-color:#d8d8d8;}
+#tableCAR #tabellaStruttura TD {border:0;}
+INPUT.plus,INPUT.minus,INPUT.up,INPUT.down,INPUT.null{border-style:none;width:11px;height:11px;}
+INPUT.plus{background-image:url(../images/b_plus.gif);}
+INPUT.minus{background-image:url(../images/b_minus.gif);}
+INPUT.down{background-image:url(../images/b_down.gif);}
+INPUT.up{background-image:url(../images/b_up.gif);}
+/*
+#tableCAR INPUT{text-align:right;border-style:none;}
+*/
+#tableCAR INPUT{text-align:right;border-style:none;}
+#tableCAR INPUT.btn{border-style:outset;}
+#tableCAR INPUT.txt{border-style:inset;}
+
+/* FIELDSET */
+.sensible{}
+.sensibleHover,.sensibleHoverIE{cursor:pointer;cursor:hand;}
+.sensibleHover,.sensibleHoverIE,.sensibleHover LABEL,.sensibleHoverIE LABEL,.sensibleLinks A:hover{background:#ccc;}
+.sensibleHover,.sensibleHoverIE,.sensibleHover LABEL,.sensibleHoverIE LABEL{-moz-border-radius: 2px 2px 0px 0px;}
+.sensible LABEL,.sensibleHover LABEL,.sensibleHoverIE LABEL{padding:0px 4px;}
+.sensibleLinks A{padding:15px;}
+.sensibleHoverIE{background:#ccc url(../images/bg_legend_sensibleFieldset.gif) repeat-x;}
+
+INPUT.btn,INPUT.btn-pagSel {
+border:1px solid #094379;
+-moz-border-radius: 4px;
+font:10px verdana;
+padding:0px 8px 2px 8px;
+/* width:115px; */
+height:22px;
+background-image: url(../images/bck_btn.gif);
+}
+INPUT.btn-pagSel{
+color:#f00;
+}
+
+* html INPUT.btn,* html INPUT.btn-pagSel {
+padding:0px 5px 0px 5px;
+/* width:115px; */
+}
+
+
+A.it{background:url(../images/flags_mini/it.gif) left no-repeat;padding-left:22px;}
+A.en{background:url(../images/flags_mini/us.gif) left no-repeat;padding-left:22px;}
+
+.paginazione {text-align:right;}
+.paginazione A {font-weight:bold;}
+.paginazione A.pagSel {color:#f00;}
+
+.itemTable,.itemTable TD,.itemTable TH {border:1px solid #999;}
+.itemTable TD,.itemTable TH,.itemTable .alphabetMenu A {padding:6px;}
+.itemTable TH {background:#ccc;}
+
+.itemTable{border-right-width:0;border-bottom-width:0;}
+.itemTable TD,.itemTable TH {border-left-width:0;border-top-width:0;}
+
+.itemTable .alphabetMenu TH {border-bottom:0;padding:0;}
+.itemTable .alphabetMenu A {display:block;}
+* html .itemTable .alphabetMenu A {width:100%}
+.itemTable .alphabetMenu A:hover {background-color:#666;}
+.itemTable .alphabetMenu .alphabetSel A {background-color:#f00;color:#fff;}
+
+#agendaTbl .nota {font:7pt tahoma;color:#000;text-decoration:none;padding:0 2px;display:block;}
+* html #agendaTbl .nota {width:100%}
+#agendaTbl .nota:hover {background:#0A246A;color:#fff;}
+#agendaTbl .notaDay,#agendaTbl .notaDayMoon {background:#f88;text-align:center;font:bold 7pt tahoma;}
+#agendaTbl .notaDay {padding-left:10px;}
+#agendaTbl .notaDay IMG.dx, #agendaTbl .notaDayMoon IMG.dx {float:right;margin:1px;}
+#agendaTbl .notaDay IMG.sx, #agendaTbl .notaDayMoon IMG.sx {float:left;margin:1px;}
+#agendaTbl,#agendaTbl TD {border:1px solid #aaa;}
+#agendaTbl {border-width:1px 0 0 1px;}
+#agendaTbl TD {border-width:0 1px 1px 0;}
+
+

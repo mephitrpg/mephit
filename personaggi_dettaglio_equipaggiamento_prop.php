@@ -1,0 +1,22 @@
+<?php
+$query="SELECT * FROM mephit_personaggio_equip WHERE fk_personaggio=".$_GET[id]."";
+$result=mysql_query($query);
+$itemsProperties=array("normal"=>array(),"wondrous"=>array(),"treasure"=>array());
+$itemsIhave=array();
+if(mysql_num_rows($result)>0){
+	while($row=mysql_fetch_assoc($result)){
+		switch($row[type]){
+			case"w":
+				$itemsProperties[wondrous][$row[fk_item]]=$byId["w".$row[fk_item]];
+			break;
+			case"t":
+				$itemsProperties[treasure][$row[fk_item]]=$byId["t".$row[fk_item]];
+			break;
+			default:
+				$itemsProperties[normal][$row[fk_item]]=$byId[$row[fk_item]];
+			break;
+		}
+		$itemsIhave[$row[possession_id]]=$row;
+	}
+}
+?>

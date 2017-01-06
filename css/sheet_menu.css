@@ -1,0 +1,17 @@
+BODY,TD,A,.ok,.error{border:0px;background-color:#D4D0C8;font:11px tahoma,arial;color:#000000;text-decoration:none;}
+FORM{display:inline;}
+IMG{border:0px;}
+A{
+	display:block;
+	float:left;
+	border:1px solid #D4D0C8;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+#l A{width:22px;line-height:20px;}
+#m A{padding:0px 7px;line-height:20px;}
+A:hover{border:1px solid #0A246A;background-color:#B6BDD2;}
+
+.ok{color:#008800;}
+.error{color:#ff0000;}
+.working{color:#ff6600;}

@@ -1,0 +1,68 @@
+DIV{position:absolute;font-family:'small fonts',helvetica;}
+.under{
+	font-size:7px;
+}
+INPUT{
+	font:10px tahoma;
+	background-color: #ffffff;
+}
+INPUT.text{
+	font:10px tahoma;
+	background-color: #ffffff;
+	border-style: solid;
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+}
+SELECT.text{
+	font:10px tahoma;
+}
+TEXTAREA{
+	font:10px tahoma;
+	background-color: #ffffff;
+	border-style: none;
+	overflow: hidden;
+	background-image: url(../images/sheet/textarea_bck.gif);
+}
+.skill{
+	font:10px tahoma;
+}
+INPUT.empty{
+	border-style: none;
+	font-size: 12px;
+	text-align: center;
+}
+INPUT.box{
+	border: solid 1px #000000;
+	font-size: 12px;
+	text-align: center;
+}
+.label-black{
+	margin:4px;
+	font:16px bold;
+}
+.cell-white{
+	color: #000000;
+	padding: 4px;
+	font:16px bold;
+	background-color: #ffffff;
+}
+.cell-gray{
+	color: #000000;
+	padding: 4px;
+	font:16px bold;
+	background-color: #bbbbbb;
+}
+.cell-black{
+	color: #ffffff;
+	padding: 4px;
+	font:bold 14px 'arial';
+	background-color: #000000;
+	text-align: center;
+}
+.txt{
+	color:#000;
+	font:13px tahoma;
+}

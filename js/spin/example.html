@@ -1,0 +1,16 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="javascript.js"></script>
+<title>Spin Control Example</title>
+</head>
+<body></body>
+<script type="text/javascript">
+var spinCtrl = new SpinControl();
+spinCtrl.GetAccelerationCollection().Add(new SpinControlAcceleration(1, 500));
+spinCtrl.GetAccelerationCollection().Add(new SpinControlAcceleration(5, 1750));
+document.body.appendChild(spinCtrl.GetContainer());
+spinCtrl.StartListening();
+</script>
+</html>
+

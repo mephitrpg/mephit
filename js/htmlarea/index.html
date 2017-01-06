@@ -1,0 +1,31 @@
+<html><head><title>HTMLArea 3.0-rc1</title>
+<script type="text/javascript" src="htmlarea_config.js"></script>
+</head><body bgcolor=#ffffff>
+
+<form name="f" action="#" method="post">
+
+<table border=0 cellpadding=1 cellspacing=0><tr><td width="550" bgcolor="#666666">
+<textarea id="testo" name="testo" style="width:548px;" rows="20"></textarea>
+</td></tr></table>
+</form>
+<script>initEditor('testo')</script>
+<style>CODE{color:#0000C0}</style>
+<h3>Implementazioni</h3><ul>
+<li>Bugfixing del file <code>lang/it.js</code>. Confrontando il file con <code>lang/en.js</code> ci si accorge che manca l'ultima parte di codice. Probabilmente l'errore è presente anche in altri files linguaggio.
+<li>Raccolto nel file <code>htmlarea_config.js</code> tutto il codice che era in pagina.
+<li>Aggiunto alla funzione initEditor() l'argomento "q" equivalente all'id (e nome) della textarea.
+</ul><h3>Note</h3><ul>
+<li>Compatibile con Explorer e Mozilla.
+<li>I pulsanti sono personalizzabili editando l'array "toolbar" che si trova nella riga 120 del file <code>htmlarea.js</code>.
+<li>Per rimuovere pulsanti basta usare gli inline comments (il commento "<code>/**/</code>") all'interno della dichiarazione dell'array "toolbar" (è possibile commentanre parte di una riga).
+<li>Per disporre i pulsanti su una o più righe, editare l'array "toolbar". Esso è un array di array. Ad ogni elemento dell'array padre (delimitato dalle parentesi quadre) corrisponde una riga.
+<li>I pulsanti della toolbar non vanno a capo. Settando la larghezza della textarea avanzata ad un valore minore di quella della toolbar, l'area di testo editabile verrà ridotta, ma le dimensioni della textarea avanzata rimarranno quelle della toolbar.
+<li>Per dichiarare un semplice CSS per la textarea editare la riga 97 del file <code>htmlarea.js</code>.<br>Esempio:<br> <code>this.pageStyle = "body{background-color:#FFFFFF;font:10pt verdana;color:#000000;}a{color:880000;}";</code>
+</ul><h3>Bugs</h3><ul>
+<li>Per qualche motivo ancora non chiaro, la funzione "<code>initEditor()</code>" dà problemi se viene richiamata all'interno della tabella che contiene la textarea o comunque annidata in alcuni tags. In caso di errore spostare il richiamo della funizone dopo la chiusura di tags o tabelle varie.
+</ul><h3>Links</h3><ul>
+<a href="http://www.interactivetools.com/products/htmlarea/" target="_blank">Homepage</a><br>
+<a href="http://sourceforge.net/projects/itools-htmlarea/" target="_blank">Homepage at SourceForge.net</a> (aggiornata più frequentemente)<br>
+</ul></td></tr></table>
+</body>
+</html>

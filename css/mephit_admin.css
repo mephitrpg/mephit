@@ -1,0 +1,18 @@
+BODY,TD,TH,A,INPUT,TEXTAREA,SELECT{color:#000000;font:11px verdana;}
+TH{font-weight:bold;}
+A:hover{color:#993333;}
+H1,H2,H3,H4,H5,H6,H7{color:#999999;margin-top:0px;}
+
+#tabella{border-width:2px 0px 0px 2px;border-color:#C0C0C0;border-style:solid;}
+#tabella TD{border-width:0px 2px 2px 0px;border-color:#C0C0C0;border-style:solid;background-color:#FFFFFF;}
+#tabella TH{border-width:0px 2px 2px 0px;border-color:#C0C0C0;border-style:solid;background-color:#C0C0C0;}
+
+.menu0					{color:#C0C0C0;font-weight:bold;}
+.menu1					{color:#C00000;text-decoration:none;font-weight:bold;}
+A.menu1:hover			{color:#FF0000;text-decoration:underline;}
+.menu2					{color:#000080;text-decoration:none;font-weight:bold;}
+A.menu2:hover			{color:#0000FF;text-decoration:underline;}
+.menu1_selected			{color:#FF0000;font-weight:bold;}
+A.menu1_selected:hover	{color:#FF0000;}
+.menu2_selected			{color:#0000FF;font-weight:bold;}
+A.menu2_selected:hover	{color:#0000FF;}

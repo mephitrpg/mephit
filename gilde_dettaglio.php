@@ -1,0 +1,10 @@
+<?php
+switch($_GET[what]){
+	case"avventure":case"membri":case"attesa":
+		require("gilde_dettaglio_".$_GET[what].".php");
+	break;
+	default:
+		require("gilde_dettaglio_summary.php");
+	break;
+}
+?>

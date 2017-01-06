@@ -1,0 +1,16 @@
+.tip{
+	position:			absolute;
+	visibility:			hidden;
+	background-color:	#FFFFE1;
+	border:				solid 1px #000000;
+	padding:			2px;
+	font-family:		'MS Sans Serif',Arial;
+	font-size:			9px;
+	text-align:			justify;
+/*	white-space: 		nowrap;*/
+}
+.help{cursor:help;}
+body{*behavior:url(cssHoverFix.htc);}
+.table{display:table;}
+.tr{display:table-row;}
+.td{display:table-cell;}

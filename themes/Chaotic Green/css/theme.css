@@ -1,0 +1,37 @@
+.bg-dark{background-color:#009864;}
+.bg-light{background-color:#00C07E;}
+
+A,BODY,TD,H3,.select_title{font-family: Trebuchet MS, Arial, Helvetica, Sans-serif;}
+A,BODY,TD{font-size:10pt;color:#000000;}
+A{color:#008800;}
+.header{font:bold 10pt verdana;color:#ffffff;text-decoration:none;padding:10px;border:solid 3px #009864;}
+A.header:hover{border-bottom-color:#00ff88;}
+.menutop{color:#ffffff;text-decoration:none;}
+A.menutop:hover{background-color:#00ee00;}
+.menutop_sel{color:#00c000;background-color:#ffffff;text-decoration:none;}
+#menusx A{color:#ffffff;font-size:14pt;line-height:24pt;text-decoration:none;}
+#menusx A:hover{border-bottom:solid 2px #ffffff;}
+.menutopLayer{position:absolute;visibility:hidden;border:solid 1px #00ff00;border-top-style:none;background-color:#ffffff;}
+H3{font-size:14pt;color:#000000;font-weight:normal;margin-top:0px;}
+H1{font-size:33;color:#99FFDC;font-weight:normal;margin-top:0px;}
+.select_title{background-color:#00C000;color:#ffffff;font-weight:bold;font-size:12pt;}
+
+#coldx{border-left:2px dashed #dddddd;}
+#coldx H3{color:#c0c0c0;}
+
+#monthCalendar {font-size:10pt;}
+#monthCalendar A {text-decoration:none;}
+#monthCalendar TD {background-color:#ffffff;font-size:8pt;line-height:7pt;}
+#monthCalendar TH {background-color:#01ffa8;color:#ffffff;}
+#monthCalendar TH.month {background-color:#00C07E;color:#ffffff;border-bottom:4px solid #009864;}
+#monthCalendar TD.empty {background-color:#01ffa8;}
+#monthCalendar #sel {border:1px solid #970000;background-color:#ffdddd;}
+#monthCalendar #sel A {color:#000000;}
+#monthCalendar #linksel {border:1px solid #009700;background-color:#ddffdd;}
+#monthCalendar #linksel A {color:#000000;}
+#monthCalendar #link {border:1px solid #000097;background-color:#ddffdd;}
+#monthCalendar #link A {color:#000000;}
+
+#CALMENU TD{COLOR:#FFFFFF;font-size: 9pt;}
+#CALMENU A{COLOR:#FFFFFF;font-size: 9pt;}
+
