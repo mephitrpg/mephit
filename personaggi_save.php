@@ -1,7 +1,7 @@
-<?php
+<?
 $debug=0;
 require_once("include/config.php");
-$pgID=$_POST[id]*1;
+$pgID=(int)$_POST[id];
 if($debug){
 	xmp($_POST);
 	xmp($_FILES);
@@ -144,8 +144,8 @@ if($canIedit){
 				}
 				$query="INSERT INTO mephit_personaggio_classe (fk_personaggio,fk_classe,liv) VALUES ".implode(",",$values);
 				$result=mysql_query($query);
-				$updated=true;
 			}
+			$updated=true;
 		break;
 		case"abilita":
 			if(is_numeric($pgID)){
@@ -162,8 +162,8 @@ if($canIedit){
 				}
 				$query="INSERT INTO mephit_personaggio_abilita (fk_personaggio,fk_abilita,liv,pa) VALUES ".implode(",",$values);
 				$result=mysql_query($query);
-				$updated=true;
 			}
+			$updated=true;
 		break;
 		case"razza":
 			$checks=array(
@@ -175,8 +175,8 @@ if($canIedit){
 				$size=($_POST[race]==1||$_POST[race]==2)?3:4;
 				$query="UPDATE mephit_personaggio SET race=".$_POST[race].",taglia=".$size.",sex='".$_POST[sex]."' WHERE id_personaggio=".$pgID;
 				$result=mysql_query($query);
-				$updated=true;
 			}
+			$updated=true;
 		break;
 		case"divinita":
 			$checks=array(
@@ -194,8 +194,8 @@ if($canIedit){
 				$query.=",domain2=".(isset($domains2)?$domains2:'NULL')."";
 				$query.=" WHERE id_personaggio=".$pgID;
 				$result=mysql_query($query);
-				$updated=true;
 			}
+			$updated=true;
 		break;
 		case"caratteristiche":
 			$query="UPDATE mephit_personaggio
@@ -260,8 +260,8 @@ if($canIedit){
 			}
 			
 			$fieldName="userfile";
-			$folder_big  =$_MEPHIT[DOCUMENT_ROOT]."/public/users/".$autore.$_MEPHIT[user][folders][pg_printable];
-			$folder_small=$_MEPHIT[DOCUMENT_ROOT]."/public/users/".$autore.$_MEPHIT[user][folders][pg_tooltip];
+			$folder_big  =$_MEPHIT[DOCUMENT_ROOT_TEST]."/public/users/".$autore.$_MEPHIT[user][folders][pg_printable];
+			$folder_small=$_MEPHIT[DOCUMENT_ROOT_TEST]."/public/users/".$autore.$_MEPHIT[user][folders][pg_tooltip];
 			
 			if($_FILES[$fieldName]['error']!=4){
 				require_once("include/jure_upload_images.php");
@@ -325,7 +325,6 @@ if($canIedit){
 				$query.=" immagine_stampa='".$_FILES[$fieldName][name]."'";
 				$query.=" WHERE id_personaggio=".$pgID;
 				$result=mysql_query($query);
-				$updated=true;
 				
 			}else{
 				
@@ -370,15 +369,13 @@ if($canIedit){
 				$query.=" SET coordinate_tooltip='".implode(",",$coordinate)."'";
 				$query.=" WHERE id_personaggio=".$pgID;
 				$result=mysql_query($query);
-				$updated=true;
 				
 			}
 			
-			if(!$debug){
-				header("location: personaggi.php?id=".$pgID."&what=".$_POST[what]);
-				exit;
-			}
+			if(!$debug)header("location: personaggi.php?id=".$pgID."&what=".$_POST[what]);
+			exit;
 			
+			$updated=true;
 		break;
 		case"crea":
 			require_once("include/functions_ogl.php");
@@ -389,8 +386,8 @@ if($canIedit){
 				case"standard":
 					$d=array();$p=array(0,0,0,0,0,0);$m=array(0,0,0,0,0,0);
 					while(array_sum($m)<1&&max($p)<14){
-						if($d=@file("http://www.random.org/integers/?num=24&min=1&max=6&col=1&base=10&format=plain&rnd=new")){
-							@mail('www.mephit.it@gmail.com','random.org ok - crea pg standard','','From:jure@mephit.it');
+						if($d=@file("http://www.random.org/integers/?num=24&min=1&max=6&col=1&base=10&format=plain&rnd=new",FILE_IGNORE_NEW_LINES)){
+							$trueRandom = true;
 							$p=array(
 								"_str"=>array($d[0],$d[1],$d[2],$d[3]),
 								"_dex"=>array($d[4],$d[5],$d[6],$d[7]),
@@ -404,7 +401,7 @@ if($canIedit){
 								$p[$k]=array_sum(array_splice($p[$k],1-count($p[$k])));
 							}
 						}else{
-							@mail('www.mephit.it@gmail.com','random.org ko - crea pg standard','','From:jure@mephit.it');
+							$trueRandom = false;
 							$p=array(
 								"_str"=>mephit_roll(),"_dex"=>mephit_roll(),"_con"=>mephit_roll(),
 								"_int"=>mephit_roll(),"_wis"=>mephit_roll(),"_cha"=>mephit_roll(),
@@ -419,8 +416,8 @@ if($canIedit){
 				case"mephit":
 					$d=array();$p=array(0,0,0,0,0,0);$m=array(0,0,0,0,0,0);
 					while(array_sum($m)<1&&max($p)<14){
-						if($d=@file("http://www.random.org/integers/?num=24&min=2&max=6&col=1&base=10&format=plain&rnd=new")){
-							@mail('www.mephit.it@gmail.com','random.org ok - crea pg mephit','','From:jure@mephit.it');
+						if($d=@file("http://www.random.org/integers/?num=24&min=2&max=6&col=1&base=10&format=plain&rnd=new",FILE_IGNORE_NEW_LINES)){
+							$trueRandom = true;
 							$p=array(
 								"_str"=>array($d[0],$d[1],$d[2],$d[3]),
 								"_dex"=>array($d[4],$d[5],$d[6],$d[7]),
@@ -434,7 +431,7 @@ if($canIedit){
 								$p[$k]=array_sum(array_splice($p[$k],1-count($p[$k])));
 							}
 						}else{
-							@mail('www.mephit.it@gmail.com','random.org ko - crea pg mephit','','From:jure@mephit.it');
+							$trueRandom = false;
 							$p=array(
 								"_str"=>mephit_roll(),"_dex"=>mephit_roll(),"_con"=>mephit_roll(),
 								"_int"=>mephit_roll(),"_wis"=>mephit_roll(),"_cha"=>mephit_roll(),
@@ -447,6 +444,7 @@ if($canIedit){
 					}
 				break;
 				case"free":
+						$trueRandom = false;
 						$p=array(
 							"_str"=>10,"_dex"=>10,"_con"=>10,
 							"_int"=>10,"_wis"=>10,"_cha"=>10,
@@ -459,7 +457,7 @@ if($canIedit){
 			if($valid){
 				switch($_POST[tipoNome]){
 					case"auto":	$name=mysql_real_escape_string(trim($_POST[namesSel]));	break;
-					case"man":	$name=mysql_real_escape_string(trim($_POST[names]));	break;
+					case"man":	$name=mysql_real_escape_string(trim($_POST[names]));		break;
 				}
 				$query="INSERT INTO mephit_personaggio (
 					`_for`,`_des`,`_cos`,
@@ -468,8 +466,8 @@ if($canIedit){
 					`autore`,
 					`metodo`,
 					`descrizione`,
-					`date_upd`,
-					`date_ins`
+					`date_ins`,
+					`date_upd`
 				) VALUES (
 					'".$p[_str]."','".$p[_dex]."','".$p[_con]."',
 					'".$p[_int]."','".$p[_wis]."','".$p[_cha]."',
@@ -490,11 +488,9 @@ if($canIedit){
 					'".$pgID."','".addslashes($_LANG["bag_owned_items"])."',1,0
 				)";
 				$result=mysql_query($query);
+				@mail('www.mephit.it@gmail.com',$_SESSION["user_nick"].' #'.$_SESSION["user_id"].' - '.$name.' #'.$pgID.' - '.($trueRandom?'true':'php').' rng ('.$_POST[metodo].')','','From:jure@mephit.it');
+				
 			}
-			//$updated=false;
-		break;
-		default:
-			//$updated=false;
 		break;
 	}
 	if($updated){
