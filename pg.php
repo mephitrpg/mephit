@@ -539,9 +539,12 @@ class PG {
 					$strain=$k[train];
 					$sarmor=$k[armor];
 					$skill_id=$k[id];
-					
-					$isClassSkill=in_array($skill_id,array_keys($classe[skills]));
-					
+						
+					if (is_null($classe[skills])) {
+						$isClassSkill = false;
+					} else {
+						$isClassSkill = in_array($skill_id, array_keys($classe[skills]));
+					}
 					$pa_current_level=isset($PA[$LEP][$skill_id])?$PA[$LEP][$skill_id]:0;
 					$ranks_current_level=$isClassSkill?$pa_current_level:$pa_current_level/2;
 					$total_pa_per_skill[$skill_id]+=$pa_current_level;

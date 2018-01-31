@@ -5,7 +5,7 @@ function calcItemWeight($item){
 	}else $w=$item[weight];
 	preg_match_all("/[0-9\.,]+/",$w,$out);
 	if(count($out[0])>0)$w=convertWeight(str_replace(",","",$out[0][0]),$_MEPHIT[lang]);
-	return $w*1;
+	return (int) $w;
 }
 function calcItemPrice($item){
 	$p=$item[price];
@@ -18,7 +18,7 @@ function calcItemPrice($item){
 		else $mod=100;	//in questo caso nel db è indicato il prezzo numerico in mo
 		$p=str_replace(",","",$out[0][0])*$mod;
 	}
-	return $p*1;
+	return (int) $p;
 }
 
 require_once("personaggi_dettaglio_equipaggiamento_sel.php");

@@ -180,7 +180,7 @@ var $lang=array(
 
 //******************************************************************************************************************************************
 
-function jureDate(){
+function __construct(){
 	$this->now=mktime( date("H"), date("i"), date("s"), date("m"), date("d"), date("Y") );
 	$this->lang[firstDay]*=1;
 	$this->modifier=0;

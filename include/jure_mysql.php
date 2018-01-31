@@ -32,7 +32,7 @@ Ritorna il numero di colonne della tabella
 */
 class jure_mysql{
 	var $alphabeticalMenu,$positionElements,$table_headers,$isAlphabetic;
-	function jure_mysql(){
+	function __construct(){
 		$this->isAlphabetic=false;
 		if(func_num_args()>0){
 			$this->isAlphabetic=true;

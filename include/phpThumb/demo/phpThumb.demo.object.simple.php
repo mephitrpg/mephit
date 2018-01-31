@@ -1,7 +1,8 @@
 <?php
 //////////////////////////////////////////////////////////////
-///  phpThumb() by James Heinrich <info@silisoftware.com>   //
-//        available at http://phpthumb.sourceforge.net     ///
+//   phpThumb() by James Heinrich <info@silisoftware.com>   //
+//        available at http://phpthumb.sourceforge.net      //
+//         and/or https://github.com/JamesHeinrich/phpThumb //
 //////////////////////////////////////////////////////////////
 ///                                                         //
 // phpThumb.demo.object.simple.php                          //
@@ -16,6 +17,8 @@
 //   you instantiate your own phpThumb() object that code is
 //   bypassed and it's up to you to handle the reading and
 //   writing of cached files, if appropriate.
+
+die('For security reasons, this demo is disabled by default. Please comment out line '.__LINE__.' in '.basename(__FILE__));
 
 require_once('../phpthumb.class.php');
 
@@ -53,9 +56,8 @@ if ($phpThumb->GenerateThumbnail()) { // this line is VERY important, do not rem
 		// do something with debug/error messages
 		echo 'Failed:<pre>'.implode("\n\n", $phpThumb->debugmessages).'</pre>';
 	}
+	$phpThumb->purgeTempFiles();
 } else {
 	// do something with debug/error messages
 	echo 'Failed:<pre>'.$phpThumb->fatalerror."\n\n".implode("\n\n", $phpThumb->debugmessages).'</pre>';
 }
-
-?>

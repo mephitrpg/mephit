@@ -1,12 +1,94 @@
-//////////////////////////////////////////////////////////////
-///  phpThumb() by James Heinrich <info@silisoftware.com>   //
-//        available at http://phpthumb.sourceforge.net     ///
-//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//   phpThumb() by James Heinrich <info@silisoftware.com>       //
+//        available at http://phpthumb.sourceforge.net          //
+//             and/or https://github.com/JamesHeinrich/phpThumb //
+//////////////////////////////////////////////////////////////////
 
 § = structure change or important new feature
 * = less important new feature or change
 
-v1.7.9 - May ??, 2008
+v1.7.14 -
+  * Bugfix (G:25): escapeshellarg may exist but be disabled
+
+v1.7.13-201406261000 - June 26, 2014
+  * Bugfix: incorrect variable name in phpThumb.php could prevent
+    all hash values from matching
+
+
+v1.7.12-201406260900 - June 26, 2014
+  § high_security_mode enabled by default and strongly recommended
+  § debug mode must be disabled to allow thumbnail generation
+    Thanks to Rafay Baloch (www.rafayhackingarticles.net) for
+    recommending some security configuration changes
+  * default config_cache_directory_depth is now 2 (was 4)
+  * Bugfix: temp files used with ImageMagick might not get deleted
+    from cache directory
+  * Bugfix (G:17): 'far' parameter not working as intended
+  * Bugfix (G:16): $PHPTHUMB_DEFAULTS configuration ignored
+  * Bugfix (G:15): $PHPTHUMB_DEFAULTS_GETSTRINGOVERRIDE logic wrong
+  * Bugfix (G:11): config_cache_maxsize does not count wasted space
+  * Bugfix (G:10): error images ignored relevant config options
+  * Bugfix (#962): support symlinked subfolders for image source
+  * Bugfix (#934): source image region (sx/sy/sw/sh) did not work
+    when using ImageMagick
+  * Bugfix (#925): add configurable URL separator
+  * Bugfix (#921): non-static phpUnsharpMask::applyUnsharpMask()
+  * Bugfix (#920): $PHPTHUMB_DEFAULTS with array value gives
+    array-to-string PHP error
+  * Bugfix (#909): unnecessary calls of shell commands when cached
+  * Bugfix (#618): cached files inside subdirs won't be deleted
+  * Bugfix (#594): ImageMagick variants not detected (e.g. OpenMP)
+
+
+v1.7.11-201108081344 - August 8, 2011
+  § Added even more explicit escaping of command line parameters
+  § $PHPTHUMB_CONFIG['high_security_password'] needs to be more
+      complex than before. Previously 5 characters length was
+      required, now password strength calculated based on character
+      type (a-z, A-Z, 0-9, other) and count.
+      See PasswordStrength() function in phpThumb.php
+  § deliberate delay inserted on failed hash in high_security mode
+      to slow down brute force attempts
+  § 'file' paramter removed (use object mode instead)
+  § 'goto' paramter removed (use object mode instead)
+  § Disable all demos by default, user will need to comment out a
+      line to run the demo
+  § CleanUpCacheDirectory() is now only called once per hour, and
+      skipped entirely if cache directory is not writable
+  * Bugfix: crop broken if width or height set to 1.00
+  * Bugfix: gamma filter for ImageMagick was broken
+  * Bugfix: newer versions of ImageMagick have changed "-gaussian"
+      filter to "-gaussian-blur"
+  * Bugfix: newer versions of ImageMagick have changed date format
+      from DD/MM/YY to YYYY-MM-DD
+  * Bugfix: image not found errors when using virtual subdirectories
+  * Bugfix: assorted errors in phpThumb.demo.check.php
+  * Bugfix (#265): source images other than JPEG/PNG/GIF would not
+      generate thumbnails for remote (http) images but work locally
+  * Bugfix (#253): ImageMagick not found if outside open_basedir
+  * Bugfix (#243): port ignored in URLreadFsock()
+  * Bugfix (#240): Any temporary file created through
+    phpThumb_tempnam() is automatically deleted at the end of the
+    script via phpThumb object destructor (PHP5 only)
+  * Bugfix (#216): uninitialized string offset
+  * Bugfix (#209): don't try ImageMagick first if
+      config_prefer_imagemagick == false
+  * Bugfix (#127): CleanUpURLencoding() ignored port number
+  * Bugfix (#38): CleanUpCacheDirectory() ignored config_cache_prefix
+  * Bugfix (#31): ExtractEXIFgetImageSize() may throw errors on non-
+      JPEG/TIFF images when calling exif_read_data()
+
+
+v1.7.10 - April 24, 2011
+  * ImageMagickVersion() returned unknown-version for versions
+    with hyphenated subversion numbers
+    (thanks r34wangÿuwaterloo*ca)
+  * replace all ereg* functions with preg* equivalents for
+    PHP v5.3.0+ compatability
+  * Bugfix: security vulnerabilities when used with ImageMagick
+
+
+v1.7.9 - May 28, 2008
   * "ra" (rotation) now handled by ImageMagick directly.
     Note: If output to transparent-supporting format (PNG,GIF)
     them ImageMagick support only enabled for v6.3.7 and above

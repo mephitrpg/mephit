@@ -1,7 +1,8 @@
 <?php
 
 // MEPHIT global declaration
-global $_MEPHIT;$_MEPHIT=array();
+global $_MEPHIT;
+$_MEPHIT=array();
 
 // user
 $_MEPHIT[user]=array();
@@ -35,6 +36,7 @@ if(!isset($_SERVER)){
 	$_SESSION=$HTTP_SESSION_VARS;
 	$_ENV=$HTTP_ENV_VARS;
 }
+require_once($thisfolder."/mysql2i/mysql2i.class.php");
 
 // MySQL Injection
 
