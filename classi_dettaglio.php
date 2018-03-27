@@ -4,18 +4,44 @@ $classe=array();
 $query="SELECT * FROM srd35_class WHERE id=".$_GET[id];
 $result=mysql_query($query);
 while($row=mysql_fetch_assoc($result)){
-	$classe[nome]=$row["name_".$_MEPHIT[lang]];
-	$classe[arcane]=$row[arcane];
-	$classe[divine]=$row[divine];
-	$classe[psion]=$row[psion];
-	$classe[key_ability]=$row[key_ability];
-	$classe[livelli]=array();
+	$classe['nome']=$row["name_".$_MEPHIT['lang']];
+	$classe['arcane']=$row['arcane'];
+	$classe['divine']=$row['divine'];
+	$classe['psion']=$row['psion'];
+	$classe['key_ability']=$row['key_ability'];
+	$classe['livelli']=array();
 }
 
-$query="SELECT * FROM srd35_class_level WHERE fk_classe=".$_GET[id]." AND level < 21 ORDER BY level";
+$query="
+	SELECT *
+	FROM srd35_class_level
+	WHERE fk_classe=".$_GET[id]."
+	AND level < 21
+	ORDER BY level
+";
 $result=mysql_query($query);
 while($row=mysql_fetch_assoc($result)){
-	$classe[livelli][]=$row;
+	$classe['livelli'][]=$row;
+}
+
+
+$query="
+	SELECT *
+	FROM srd35_class_feature_level as fl
+	JOIN srd35_class_feature as cf
+	WHERE fl.fk_classe=".$_GET[id]."
+	AND cf.id=fl.fk_privilegio
+	AND fl.fk_livello < 21
+	ORDER BY fl.fk_livello, cf.name_".$_MEPHIT['lang']."
+";
+$result=mysql_query($query);
+while($row=mysql_fetch_assoc($result)){
+
+	$l = $row['fk_livello'] - 1;
+	if (!isset($classe['livelli'][$l]['special'])) {
+		$classe[livelli][$l]['special'] = array();
+	}
+	$classe[livelli][$l]['special'][] = $row;
 }
 
 $classe[martial]=!$classe[arcane]&&!$classe[divine]&&!$classe[psion]?1:0;

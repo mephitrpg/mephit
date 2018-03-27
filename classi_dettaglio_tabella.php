@@ -200,8 +200,11 @@ foreach($classe[livelli] AS $index=>$livello){
 	$BODY.='<td class="right">'.	'<div contentEditable class="v">'.$value.'</div>'.	'</td>';
 
 	$key="special";
-	$value=$livello[$key];
-	$BODY.='<td class="left">'.		'<div contentEditable class="v">'.$value.'</div>'.	'</td>';
+	$value=array();
+	foreach ($livello[$key] as $level) {
+		$value[] = $level['table_'.$_MEPHIT['lang']];
+	}
+	$BODY.='<td class="left">'.		'<div contentEditable class="v">'.join(", ", $value).'</div>'.	'</td>';
 
 	if($showSpells){
 		for($i=0;$i<10;$i++){

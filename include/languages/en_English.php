@@ -277,6 +277,19 @@ $_LANG["proficiencies"]="Proficiencies";
 $_LANG["alignment"]="Alignment";
 $_LANG["alignments"]="Alignments";
 
+$_LANG["ex"]="Ex";
+$_LANG["ex_label"]="Extraordinary";
+$_LANG["ex_label_full"]="Extraordinary ability";
+$_LANG["sp"]="Sp";
+$_LANG["sp_label"]="Spell-like";
+$_LANG["sp_label_full"]="Spell-like ability";
+$_LANG["ps"]="Ps";
+$_LANG["ps_label"]="Psi-like";
+$_LANG["ps_label_full"]="Psi-like ability";
+$_LANG["su"]="Su";
+$_LANG["su_label"]="Supernatural";
+$_LANG["su_label_full"]="Supernatural ability";
+
 $_LANG["load_light"]="Light load";
 $_LANG["load_medium"]="Medium load";
 $_LANG["load_heavy"]="Heavy load";

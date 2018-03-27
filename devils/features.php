@@ -1,6 +1,6 @@
 <?php
-require_once(dirname(__FILE__)."/../include/mysql2i/mysql2i.class.php");
-require_once(dirname(__FILE__)."/../include/db_connect.php");
+require_once(dirname(__FILE__)."/include/mysql2i/mysql2i.class.php");
+require_once(dirname(__FILE__)."/include/db_connect.php");
 
 switch($_GET[act]){
 	case "select":
@@ -199,6 +199,7 @@ table tr:nth-child(2n) td{background:#eee;}
 		<pre class="json preview"></pre>
 		<pre class="json levels"></pre>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/he/1.1.1/he.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	var editUrl = "/phpmyadmin/tbl_change.php?db=mephit_test&table=srd35_class_feature_level&where_clause=%60srd35_class_feature_level%60.%60fk_privilegio%60+%3D+{f}+AND+%60srd35_class_feature_level%60.%60fk_classe%60+%3D+{c}+AND+%60srd35_class_feature_level%60.%60fk_livello%60+%3D+{l}&clause_is_unique=1&sql_query=SELECT+%2A++FROM+%60srd35_class_feature_level%60+WHERE+%60fk_classe%60+%3D+{c}+ORDER+BY+%60fk_livello%60+ASC+&goto=sql.php&default_action=update";
@@ -335,7 +336,7 @@ table tr:nth-child(2n) td{background:#eee;}
 				}
 				
 				if( data.json !== undefined ) {
-					$(".json.db").val(data.json);
+					$(".json.db").val(he.decode(data.json));
 					$(".json.db").trigger("input");
 					phpmyadmin_edit_update([f,c,l]);
 				} else {

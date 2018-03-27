@@ -277,6 +277,19 @@ $_LANG["proficiencies"]="Competenze";
 $_LANG["alignment"]="Allineamento";
 $_LANG["alignments"]="Allineamenti";
 
+$_LANG["ex"]="Str";
+$_LANG["ex_label"]="Straordinaria";
+$_LANG["ex_label_full"]="Capacità straordinaria";
+$_LANG["sp"]="Mag";
+$_LANG["sp_label"]="Magica";
+$_LANG["sp_label_full"]="Capacità magica";
+$_LANG["ps"]="Psi";
+$_LANG["ps_label"]="Psionica";
+$_LANG["ps_label_full"]="Capacità psionica";
+$_LANG["su"]="Sop";
+$_LANG["su_label"]="Soprannaturale";
+$_LANG["su_label_full"]="Capacità soprannaturale"; 
+
 $_LANG["load_light"]="Carico leggero";
 $_LANG["load_medium"]="Carico medio";
 $_LANG["load_heavy"]="Carico pesante";
