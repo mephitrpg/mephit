@@ -5,6 +5,6 @@ Trello: https://trello.com/b/RfEzneF0
 
 Website: www.mephit.it
 
-Email: www.mephit.it@gmail.com
+Email: <www.mephit.it@gmail.com>
 
 Author: jure
